@@ -7,13 +7,13 @@ export type BarberDocument = HydratedDocument<Barber>;
   collection: 'Barbers',
 })
 export class Barber {
-  @Prop()
+  @Prop({ required: true })
   name: string;
 
-  @Prop()
+  @Prop({ unique: true, required: true, lowercase: true })
   email: string;
 
-  @Prop()
+  @Prop({ required: true })
   password: string;
 }
 

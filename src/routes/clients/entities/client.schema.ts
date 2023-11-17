@@ -7,13 +7,13 @@ export type ClientDocument = HydratedDocument<Client>;
   collection: 'Clients',
 })
 export class Client {
-  @Prop()
+  @Prop({ required: true })
   name: string;
 
-  @Prop()
+  @Prop({ unique: true, required: true, lowercase: true })
   email: string;
 
-  @Prop()
+  @Prop({ required: true })
   password: string;
 }
 
